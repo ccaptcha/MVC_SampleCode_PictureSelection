@@ -1,0 +1,58 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>picture selection demo </title> 
+    <script src="https://widget.ccaptcha.com/js/ccaptcha_version2_M9.js"></script>
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>
+<body dir="rtl">
+ 
+ 
+
+    @using (Html.BeginForm("Confirm", "SampleCCaptcha" ))
+    {
+        <ul class="form-style-1">
+            <li><label>نام کامل</label><input disabled="disabled" type="text" name="field1" class="field-divided" placeholder="نام" /> <input disabled="disabled" type="text" name="field2" class="field-divided" placeholder="نام خانوادگی" /></li>
+            <li>
+                <label>ایمیل</label>
+                <input disabled="disabled" type="email" name="field3" class="field-long" placeholder="info@ccaptcha.com" />
+            </li>
+            <li>
+                <label>کشور</label>
+                <select disabled="disabled" name="field4" class="field-select">
+                    <option value="Advertise">ایران</option>
+                    <option value="Partnership">مالزی</option>
+                    <option value="General Question">عراق</option>
+                </select>
+            </li>
+            <li>
+                <label>پیام شما</label>
+                <textarea name="field5" id="field5" disabled="disabled" class="field-long field-textarea" placeholder="سی کپچا، ارائه دهنده خدمات مبتنی بر کپچا"></textarea>
+            </li>
+            <li style="text-align: center">
+
+                <center>
+                    <div class="ccaptcha_M9" id="ccaptcha_M9" data_ccaptcha_apicode="Your API Code"></div>
+                </center>
+            </li>
+            <li>
+                <input type="submit"  value="تایید" /> 
+            </li>
+
+
+        </ul>
+
+                <br />
+                <center>
+                    @ViewBag.Response
+                    </center>
+                    }
+</body>
+</html>
